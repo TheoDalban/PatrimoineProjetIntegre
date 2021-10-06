@@ -1,0 +1,19 @@
+.banner-monument{
+    color: black;
+	text-align: center;
+	padding: 32px;
+	border-bottom: solid 3px black;
+    justify-content: center;
+}
+
+.banner-title {
+    color: #ffc107;
+}
+
+.banner-info{
+    color: rgba(0, 0, 0, 0.623);
+}
+
+.banner-info-position{
+    text-align: left;
+}
