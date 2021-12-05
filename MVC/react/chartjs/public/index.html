@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
 
     <link rel="shortcut icon" type="image/png" href="unesco.png"/>
+    <link rel="stylesheet" href="./styles/index.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
@@ -11,14 +13,30 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
 
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-gl.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/shandong.js"></script>
+
     
-  
+    <script>
+      function afficheListe() {
+        document.getElementById("accueil").style.display = "none";
+        document.getElementById("ListeMonument").style.display = "contents";
+      }
+      function afficheAccueil() {
+        document.getElementById("accueil").style.display = "contents";
+        document.getElementById("ListeMonument").style.display = "none";
+      }
+    </script>
 
     <title>Patrimoine Français</title>
 </head>
+<div class="pageIndex">
 <header>
 
-    <nav class="navbar navbar-expand-xxl navbar-light bg-warning bg-opacity-75">
+    <nav class="navbar navbar-expand-xxl navbar-light bg-secondary bg-opacity-75">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Patrimoine Français</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +45,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+            <a class="nav-link active" aria-current="page" href="#" onclick="afficheAccueil()">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="afficheListe()">Liste des monuments</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Liens</a>
@@ -57,9 +78,800 @@
 
 </header>
 <body>
- 
+  
   <div id='root'></div>
+  <div id="fac83d6f341f4011b78cd8e5116b40de" class="chart-container" style="width:1350px; height:750px;"></div>
+    <script>
+        var chart_fac83d6f341f4011b78cd8e5116b40de = echarts.init(
+            document.getElementById('fac83d6f341f4011b78cd8e5116b40de'), 'white', {renderer: 'canvas'});
+        var option_fac83d6f341f4011b78cd8e5116b40de = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#802200",
+        "#B33000",
+        "#FF4500",
+        "#FAA327",
+        "#9ECB3C",
+        "#6DBC49",
+        "#37B44E",
+        "#14ADCF",
+        "#209AC9",
+        "#1E91CA",
+        "#2C6BA0",
+        "#2B55A1",
+        "#2D3D8E",
+        "#44388E",
+        "#6A368B",
+        "#D02C2A",
+        "#D44C2D",
+        "#F57A34",
+        "#FA8F2F",
+        "#D99D21"
+    ],
+    "series": [
+        {
+            "type": "pie",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "Pays-Bas",
+                    "value": 37
+                },
+                {
+                    "name": "Italie",
+                    "value": 66
+                },
+                {
+                    "name": "Luxembourg",
+                    "value": 80
+                },
+                {
+                    "name": "Allemagne",
+                    "value": 80
+                },
+                {
+                    "name": "Espagne",
+                    "value": 100
+                },
+                {
+                    "name": "Australie",
+                    "value": 165
+                },
+                {
+                    "name": "Etats-Unis",
+                    "value": 317
+                },
+                {
+                    "name": "Canada",
+                    "value": 442
+                },
+                {
+                    "name": "Suisse",
+                    "value": 543
+                },
+                {
+                    "name": "Belgique",
+                    "value": 1293
+                }
+            ],
+            "radius": [
+                "20%",
+                "95%"
+            ],
+            "center": [
+                "30%",
+                "60%"
+            ],
+            "roseType": "area",
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "fontSize": 12,
+                "fontStyle": "italic",
+                "fontWeight": "bold",
+                "fontFamily": "Century",
+                "formatter": "{b}:{c}%"
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "Pays-Bas",
+                "Italie",
+                "Luxembourg",
+                "Allemagne",
+                "Espagne",
+                "Australie",
+                "Etats-Unis",
+                "Canada",
+                "Suisse",
+                "Belgique"
+            ],
+            "selected": {},
+            "show": false,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "Projet",
+            "subtext": "PATRIMOINE",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "toolbox": {
+        "show": true,
+        "orient": "horizontal",
+        "itemSize": 15,
+        "itemGap": 10,
+        "left": "80%",
+        "feature": {
+            "saveAsImage": {
+                "type": "png",
+                "backgroundColor": "auto",
+                "connectedBackgroundColor": "#fff",
+                "show": true,
+                "title": "\u4fdd\u5b58\u4e3a\u56fe\u7247",
+                "pixelRatio": 1
+            },
+            "restore": {
+                "show": true,
+                "title": "\u8fd8\u539f"
+            },
+            "dataView": {
+                "show": true,
+                "title": "\u6570\u636e\u89c6\u56fe",
+                "readOnly": false,
+                "lang": [
+                    "\u6570\u636e\u89c6\u56fe",
+                    "\u5173\u95ed",
+                    "\u5237\u65b0"
+                ],
+                "backgroundColor": "#fff",
+                "textareaColor": "#fff",
+                "textareaBorderColor": "#333",
+                "textColor": "#000",
+                "buttonColor": "#c23531",
+                "buttonTextColor": "#fff"
+            },
+            "dataZoom": {
+                "show": true,
+                "title": {
+                    "zoom": "\u533a\u57df\u7f29\u653e",
+                    "back": "\u533a\u57df\u7f29\u653e\u8fd8\u539f"
+                },
+                "icon": {},
+                "xAxisIndex": false,
+                "yAxisIndex": false,
+                "filterMode": "filter"
+            },
+            "magicType": {
+                "show": true,
+                "type": [
+                    "line",
+                    "bar",
+                    "stack",
+                    "tiled"
+                ],
+                "title": {
+                    "line": "\u5207\u6362\u4e3a\u6298\u7ebf\u56fe",
+                    "bar": "\u5207\u6362\u4e3a\u67f1\u72b6\u56fe",
+                    "stack": "\u5207\u6362\u4e3a\u5806\u53e0",
+                    "tiled": "\u5207\u6362\u4e3a\u5e73\u94fa"
+                },
+                "icon": {}
+            },
+            "brush": {
+                "icon": {},
+                "title": {
+                    "rect": "\u77e9\u5f62\u9009\u62e9",
+                    "polygon": "\u5708\u9009",
+                    "lineX": "\u6a2a\u5411\u9009\u62e9",
+                    "lineY": "\u7eb5\u5411\u9009\u62e9",
+                    "keep": "\u4fdd\u6301\u9009\u62e9",
+                    "clear": "\u6e05\u9664\u9009\u62e9"
+                }
+            }
+        }
+    }
+};
+        chart_fac83d6f341f4011b78cd8e5116b40de.setOption(option_fac83d6f341f4011b78cd8e5116b40de);
+    </script>
 
+<div id="ef888fcadb0d420fba1827d40205f8af" class="chart-container" style="width:900px; height:500px;"></div>
+<script>
+    var chart_ef888fcadb0d420fba1827d40205f8af = echarts.init(
+        document.getElementById('ef888fcadb0d420fba1827d40205f8af'), 'white', {renderer: 'canvas'});
+    var option_ef888fcadb0d420fba1827d40205f8af = {
+"animation": true,
+"animationThreshold": 2000,
+"animationDuration": 1000,
+"animationEasing": "cubicOut",
+"animationDelay": 0,
+"animationDurationUpdate": 300,
+"animationEasingUpdate": "cubicOut",
+"animationDelayUpdate": 0,
+"color": [
+    "#c23531",
+    "#2f4554",
+    "#61a0a8",
+    "#d48265",
+    "#749f83",
+    "#ca8622",
+    "#bda29a",
+    "#6e7074",
+    "#546570",
+    "#c4ccd3",
+    "#f05b72",
+    "#ef5b9c",
+    "#f47920",
+    "#905a3d",
+    "#fab27b",
+    "#2a5caa",
+    "#444693",
+    "#726930",
+    "#b2d235",
+    "#6d8346",
+    "#ac6767",
+    "#1d953f",
+    "#6950a1",
+    "#918597"
+],
+"series": [
+    {
+        "type": "lines3D",
+        "coordinateSystem": "geo3D",
+        "geo3DIndex": 0,
+        "globeIndex": 0,
+        "polyline": false,
+        "effect": {
+            "show": true,
+            "period": 4,
+            "trailWidth": 3,
+            "trailLength": 0.5,
+            "trailColor": "#f00",
+            "trailOpacity": 1
+        },
+        "lineStyle": {
+            "show": false,
+            "width": 1,
+            "opacity": 0,
+            "curveness": 0,
+            "type": "solid",
+            "color": "#fff"
+        },
+        "data": [
+            [
+                [
+                    119.107078,
+                    36.70925,
+                    1000
+                ],
+                [
+                    116.587245,
+                    35.415393,
+                    1000
+                ]
+            ],
+            [
+                [
+                    117.000923,
+                    36.675807
+                ],
+                [
+                    120.355173,
+                    36.082982
+                ]
+            ],
+            [
+                [
+                    118.047648,
+                    36.814939
+                ],
+                [
+                    118.66471,
+                    37.434564
+                ]
+            ],
+            [
+                [
+                    121.391382,
+                    37.539297
+                ],
+                [
+                    119.107078,
+                    36.70925
+                ]
+            ],
+            [
+                [
+                    116.587245,
+                    35.415393
+                ],
+                [
+                    122.116394,
+                    37.509691
+                ]
+            ],
+            [
+                [
+                    119.461208,
+                    35.428588
+                ],
+                [
+                    118.326443,
+                    35.065282
+                ]
+            ],
+            [
+                [
+                    116.307428,
+                    37.453968
+                ],
+                [
+                    115.469381,
+                    35.246531
+                ]
+            ]
+        ],
+        "blendMode": "source-over",
+        "zlevel": -10,
+        "silent": false
+    }
+],
+"legend": [
+    {
+        "data": [
+            ""
+        ],
+        "selected": {
+            "": true
+        },
+        "show": true,
+        "padding": 5,
+        "itemGap": 10,
+        "itemWidth": 25,
+        "itemHeight": 14
+    }
+],
+"tooltip": {
+    "show": true,
+    "trigger": "item",
+    "triggerOn": "mousemove|click",
+    "axisPointer": {
+        "type": "line"
+    },
+    "showContent": true,
+    "alwaysShowContent": false,
+    "showDelay": 0,
+    "hideDelay": 100,
+    "textStyle": {
+        "fontSize": 14
+    },
+    "borderWidth": 0,
+    "padding": 5
+},
+"geo3D": {
+    "map": "\u5c71\u4e1c",
+    "boxWidth": 100,
+    "boxHeight": 10,
+    "regionHeight": 3,
+    "groundPlane": {
+        "show": false,
+        "color": "#aaa"
+    },
+    "instancing": false,
+    "itemStyle": {
+        "color": "rgb(5,101,123)",
+        "borderColor": "rgb(62,215,213)",
+        "borderWidth": 0.8,
+        "opacity": 1
+    },
+    "emphasis": {},
+    "light": {
+        "main": {
+            "color": "#fff",
+            "intensity": 1.2,
+            "shadow": false,
+            "shadowQuality": "medium",
+            "alpha": 55,
+            "beta": 10
+        },
+        "ambient": {
+            "color": "#fff",
+            "intensity": 0.3
+        },
+        "ambientCubemap": {
+            "diffuseIntensity": 0.5,
+            "specularIntensity": 0.5
+        }
+    },
+    "postEffect": {
+        "enable": false,
+        "bloom": {
+            "enable": false,
+            "bloomIntensity": 0.1
+        },
+        "depthOfField": {
+            "enable": false,
+            "focalDistance": 50,
+            "focalRange": 20,
+            "fstop": 2.8,
+            "blurRadius": 10
+        },
+        "SSAO": {
+            "enable": false,
+            "quality": "medium",
+            "radius": 2,
+            "intensity": 1
+        },
+        "colorCorrection": {
+            "enable": false,
+            "exposure": 0,
+            "brightness": 0,
+            "contrast": 1,
+            "saturation": 1
+        },
+        "FXAA": {
+            "enable": false
+        }
+    },
+    "temporalSuperSampling": {
+        "enable": "auto"
+    },
+    "viewControl": {
+        "projection": "perspective",
+        "autoRotate": false,
+        "autoRotateDirection": "cw",
+        "autoRotateSpeed": 10,
+        "autoRotateAfterStill": 3,
+        "damping": 0.8,
+        "rotateSensitivity": 1,
+        "zoomSensitivity": 1,
+        "panSensitivity": 1,
+        "panMouseButton": "left",
+        "rotateMouseButton": "middle",
+        "distance": 100,
+        "minDistance": 40,
+        "maxDistance": 400,
+        "orthographicSize": 100,
+        "minOrthographicSize": 20,
+        "maxOrthographicSize": 400,
+        "alpha": 40,
+        "beta": 0,
+        "center": [
+            -10,
+            0,
+            10
+        ],
+        "minAlpha": 5,
+        "maxAlpha": 90,
+        "minBeta": -80,
+        "maxBeta": 80,
+        "animation": true,
+        "animationDurationUpdate": 1000,
+        "animationEasingUpdate": "cubicInOut"
+    },
+    "zlevel": -10,
+    "left": "auto",
+    "top": "auto",
+    "right": "auto",
+    "bottom": "auto",
+    "width": "auto",
+    "height": "auto"
+},
+"title": [
+    {
+        "text": "Map3D-Lines3D",
+        "padding": 5,
+        "itemGap": 10
+    }
+]
+};
+    chart_ef888fcadb0d420fba1827d40205f8af.setOption(option_ef888fcadb0d420fba1827d40205f8af);
+</script>
+
+<!-- MAP CURVED LINES
+          styles      -->
+<style>
+    #chartdiv {
+      width: 100%;
+      height: 500px;
+    }
+    </style>
+    
+    <!-- Resources -->
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    
+    <!-- Chart code -->
+    <script>
+    am5.ready(function() {
+    
+    // Create root element
+    // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+    var root = am5.Root.new("chartdiv");
+    
+    
+    // Set themes
+    // https://www.amcharts.com/docs/v5/concepts/themes/
+    root.setThemes([
+      am5themes_Animated.new(root)
+    ]);
+    
+    
+    // Create the map chart
+    // https://www.amcharts.com/docs/v5/charts/map-chart/
+    var chart = root.container.children.push(am5map.MapChart.new(root, {
+      panX: "translateX",
+      panY: "translateY",
+      projection: am5map.geoMercator()
+    }));
+    
+    var cont = chart.children.push(am5.Container.new(root, {
+      layout: root.horizontalLayout,
+      x: 20,
+      y: 40
+    }));
+    
+    
+    // Add labels and controls
+    cont.children.push(am5.Label.new(root, {
+      centerY: am5.p50,
+      text: "Map"
+    }));
+    
+    var switchButton = cont.children.push(am5.Button.new(root, {
+      themeTags: ["switch"],
+      centerY: am5.p50,
+      icon: am5.Circle.new(root, {
+        themeTags: ["icon"]
+      })
+    }));
+    
+    switchButton.on("active", function() {
+      if (!switchButton.get("active")) {
+        chart.set("projection", am5map.geoMercator());
+        chart.set("panX", "translateX");
+        chart.set("panY", "translateY");
+      }
+      else {
+        chart.set("projection", am5map.geoOrthographic());
+        chart.set("panX", "rotateX");
+        chart.set("panY", "rotateY");
+      }
+    });
+    
+    cont.children.push(am5.Label.new(root, {
+      centerY: am5.p50,
+      text: "Globe"
+    }));
+    
+    // Create main polygon series for countries
+    // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
+    var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+      geoJSON: am5geodata_worldLow
+    }));
+    
+    var graticuleSeries = chart.series.push(am5map.GraticuleSeries.new(root, {}));
+    graticuleSeries.mapLines.template.setAll({
+      stroke: root.interfaceColors.get("alternativeBackground"),
+      strokeOpacity: 0.08
+    });
+    
+    // Create line series for trajectory lines
+    // https://www.amcharts.com/docs/v5/charts/map-chart/map-line-series/
+    var lineSeries = chart.series.push(am5map.MapLineSeries.new(root, {}));
+    lineSeries.mapLines.template.setAll({
+      stroke: root.interfaceColors.get("alternativeBackground"),
+      strokeOpacity: 0.6,
+      strokeWidth: 5,
+    });
+    
+    // destination series
+    var citySeries = chart.series.push(
+      am5map.MapPointSeries.new(root, {})
+    );
+    
+    citySeries.bullets.push(function() {
+      var circle = am5.Circle.new(root, {
+        radius: 5,
+        tooltipText: "{title}",
+        tooltipY: 0,
+        fill: am5.color(0xffba00),
+        stroke: root.interfaceColors.get("background"),
+        strokeWidth: 2
+      });
+    
+      return am5.Bullet.new(root, {
+        sprite: circle
+      });
+    });
+    
+    // arrow series
+    var arrowSeries = chart.series.push(
+      am5map.MapPointSeries.new(root, {})
+    );
+    
+    arrowSeries.bullets.push(function() {
+      var arrow = am5.Graphics.new(root, {
+        fill: am5.color(0x000000),
+        stroke: am5.color(0x000000),
+        draw: function (display) {
+          display.moveTo(0, -3);
+          display.lineTo(8, 0);
+          display.lineTo(0, 3);
+          display.lineTo(0, -3);
+        }
+      });
+    
+      return am5.Bullet.new(root, {
+        sprite: arrow
+      });
+    });
+    
+    var cities = [
+      {
+        id: "saint michel",
+        title: "Abbaye du Mont-Saint-Michel",
+        geometry: { type: "Point", coordinates: [-1.510278, 48.636391] }
+      },
+      {
+        id: "cat bourges",
+        title: "Cathédrale Saint-Étienne de Bourges",
+        geometry: { type: "Point", coordinates: [2.3970163, 47.0821675] },
+      },
+      {
+        id: "cat chartres",
+        title: "Cathédrale Notre-Dame de Chartres",
+        geometry: { type: "Point", coordinates: [1.4856484, 48.4478061] }
+      }, {
+        id: "cat amiens",
+        title: "Cathédrale Notre-Dame d'Amiens",
+        geometry: { type: "Point", coordinates: [2.2998594, 49.8946286] }
+      }, {
+        id: "dame avignon",
+        title: "Notre Dame des Doms d'Avignon",
+        geometry: { type: "Point", coordinates: [4.8056519, 43.9514439] }
+      }, {
+        id: "cat reims",
+        title: "Cathédrale Notre-Dame de Reims",
+        geometry: { type: "Point", coordinates: [4.0318532, 49.2538627] }
+      }, {
+        id: "bas fourviere",
+        title: "Basilique Notre Dame de Fourvière",
+        geometry: { type: "Point", coordinates: [4.8204373, 45.7622965] }
+      }, {
+        id: "cat paris",
+        title: "Cathédrale Notre-Dame de Paris",
+        geometry: { type: "Point", coordinates: [2.3477134, 48.8529717] }
+      }, {
+        id: "cat strasbourg",
+        title: "Cathédrale Notre Dame de Strasbourg",
+        geometry: { type: "Point", coordinates: [7.7485755, 48.5817555] }
+      }];
+    
+    citySeries.data.setAll(cities);
+    
+    // prepare line series data
+    var destinations = ["cat strasbourg", "cat paris", "bas fourviere", "cat reims", "dame avignon", "cat amiens", "cat chartres", "cat bourges"];
+    // Saint Michel coordinates
+    var originLongitude = -1.510278;
+    var originLatitude = 48.636391;
+    
+    // Fourvière -- Avignon
+    am5.array.each(destinations, function (did) {
+    var destinationDataItem = citySeries.getDataItemById(did);
+    var lineDataItem = lineSeries.pushDataItem({ orientation: "vertical", geometry: { type: "LineString", coordinates: [[4.8204373, 45.7622965], [4.8056519, 43.9514439]] } }); //[destinationDataItem.get("longitude"), destinationDataItem.get("latitude")]]
+
+    arrowSeries.pushDataItem({
+      lineDataItem: lineDataItem,
+      positionOnLine: 0.5,
+      autoRotate: true,
+    });
+  })
+
+    // Strasbourg -- Avignon
+    am5.array.each(destinations, function (did) {
+      var destinationDataItem = citySeries.getDataItemById(did);
+      var lineDataItem = lineSeries.pushDataItem({ orientation: "vertical", geometry: { type: "LineString", coordinates: [[7.7485755, 48.5817555], [4.8056519, 43.9514439]] } }); //[destinationDataItem.get("longitude"), destinationDataItem.get("latitude")]]
+
+      arrowSeries.pushDataItem({
+        lineDataItem: lineDataItem,
+        positionOnLine: 0.5,
+        autoRotate: true,
+      });
+    })
+
+    // Fourvière -- Strasbourg
+    am5.array.each(destinations, function (did) {
+      var destinationDataItem = citySeries.getDataItemById(did);
+      var lineDataItem = lineSeries.pushDataItem({ orientation: "vertical", geometry: { type: "LineString", coordinates: [[4.8204373, 45.7622965], [7.7485755, 48.5817555]] } }); //[destinationDataItem.get("longitude"), destinationDataItem.get("latitude")]]
+
+      arrowSeries.pushDataItem({
+        lineDataItem: lineDataItem,
+        positionOnLine: 0.5,
+        autoRotate: true,
+      });
+    })
+
+    // Strasbourg -- Saint-Michel
+    am5.array.each(destinations, function (did) {
+      var destinationDataItem = citySeries.getDataItemById(did);
+      var lineDataItem = lineSeries.pushDataItem({ orientation: "vertical", geometry: { type: "LineString", coordinates: [[7.7485755, 48.5817555], [-1.510278, 48.636391]] } }); //[destinationDataItem.get("longitude"), destinationDataItem.get("latitude")]]
+
+      arrowSeries.pushDataItem({
+        lineDataItem: lineDataItem,
+        positionOnLine: 0.5,
+        autoRotate: true,
+      });
+    })
+
+    //Saint-Michel -- Fourvière
+    am5.array.each(destinations, function (did) {
+      var destinationDataItem = citySeries.getDataItemById(did);
+      var lineDataItem = lineSeries.pushDataItem({ orientation: "vertical", geometry: { type: "LineString", coordinates: [[originLongitude, originLatitude], [4.8204373, 45.7622965]] } }); //[destinationDataItem.get("longitude"), destinationDataItem.get("latitude")]]
+
+      arrowSeries.pushDataItem({
+        lineDataItem: lineDataItem,
+        positionOnLine: 0.5,
+        autoRotate: true,
+      });
+    })
+
+ 
+    
+    polygonSeries.events.on("datavalidated", function () {
+      chart.zoomToGeoPoint({ longitude: -0.1262, latitude: 51.5002 }, 3);
+    })
+    
+    
+    // Make stuff animate on load
+    chart.appear(1000, 100);
+    
+    }); // end am5.ready()
+    </script>
+
+    <!-- HTML -->
+    <div id="chartdiv"></div>
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
 
@@ -67,13 +879,13 @@
 
 </body>
 
-    <footer class="footer mt-auto py-3 bg-warning bg-opacity-75">
+    <footer class="footer mt-auto py-3 bg-secondary bg-opacity-75">
         <div class="container">
             <span class="text-muted">
                 <b>Patrimoine Français</b> est un projet réalisé dans le cadre de l'UE Projet Intégré et Conduite de projet du <b>M1 Informatique</b> de l'université lumière Lyon 2
             </span>
         </div>
     </footer>
-
+</div>
 
 </html>
