@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pie } from 'react-chartjs-2'
 
-const BarChart = () => {
+const Pi = () => {
     return (
     <div>
         <Pie
@@ -27,12 +27,7 @@ const BarChart = () => {
                         'rgba(255, 159, 64, 1)'
                     ],
                     borderWidth: 1,
-                },
-                {
-                    labels: 'score',
-                    data: [12,24,35]
                 }
-
             ]
             }} 
             height={400}
@@ -54,4 +49,4 @@ const BarChart = () => {
     )
 }
 
-export default BarChart
+export default Pi

@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
-const Instagram = require('instagram-web-api')
+/* const Instagram = require('instagram-web-api')
 const username = "pat_la_debrouille"
 const password = "ppifrance"
 
@@ -20,7 +19,7 @@ client
       .getProfilePhoto()
       .then(console.log)
   }
-  )
+  ) */
 
 ReactDOM.render(
   <React.StrictMode>

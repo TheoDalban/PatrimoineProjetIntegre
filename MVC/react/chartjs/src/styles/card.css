@@ -1,4 +1,19 @@
 .itemcard{
-    width: 18rem;
-    background-color: #ffc107;
+    width: 270px;
+    text-align: center;
+
+}
+
+
+
+ul{
+    list-style-type: none;
+}
+
+li{
+    display: inline-block;
+    position: flex;
+    list-style-position:outside;
+    margin-right:25px;
+    margin-bottom: 25px;
 }
